@@ -1,0 +1,33 @@
+max_width = 120
+error_on_line_overflow = true
+# This rustfmt file is added for configuration, but in practice much of our
+# code is hand-formatted, frequently with more readable results.
+
+# Comments:
+normalize_comments = true
+wrap_comments = false
+comment_width = 100      # small excess is okay but prefer 80
+
+# Arguments:
+use_small_heuristics = "Default"
+fn_single_line = false
+fn_args_layout = "Compressed"
+overflow_delimited_expr = true
+where_single_line = true
+
+# enum_discrim_align_threshold = 20
+# struct_field_align_threshold = 20
+
+# Misc:
+inline_attribute_width = 80
+blank_lines_upper_bound = 2
+reorder_impl_items = true
+# report_todo = "Unnumbered"
+# report_fixme = "Unnumbered"
+
+# Ignored files:
+ignore = []
+edition = "2021"
+format_strings = false
+match_block_trailing_comma = true
+version = "Two"

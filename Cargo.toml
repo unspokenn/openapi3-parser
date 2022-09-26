@@ -1,0 +1,59 @@
+[package]
+name = "openapi3-parser"
+version = "0.1.0"
+readme = "README.md"
+license = "MIT/Apache-2.0"
+keywords = ["openapi", "parser"]
+categories = ["encoding", "parser-implementations", "parsing", "config"]
+description = """
+A OpenAPI 3.0.0 encoder and decoder. Provides implementations of the standard
+Serialize/Deserialize traits for OpenAPI file to facilitate
+deserializing and serializing Rust structures.
+"""
+authors = ["Sadık Ergüven <unspokenn@protonmail.com>"]
+repository = "https://github.com/unspokenn/openapi3-parser"
+homepage = "https://github.com/unspokenn/openapi3-parser"
+documentation = "https://docs.rs/openapi3-parser"
+edition = "2021"
+exclude = ["/ci/*", "/.github/*", "/.cirrus.yml", "/triagebot.toml", "/.idea/*", "/.git/*", ".clog.toml", ".editorconfig"]
+include = ["src/", "LICENSE-*", "README.md", "COPYRIGHT"]
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+[dependencies]
+serde = { version = "1.0", feature = ["derive"] }
+serde_json = { version = "1.0", feature = ["preserve_order"] }
+
+
+[profile.dev]
+opt-level=0
+debug = true
+rpath = false
+lto = false
+debug-assertions = true
+codegen-units = 4
+
+[profile.release]
+opt-level=3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+
+[profile.test]
+opt-level = 1
+debug = true
+rpath = false
+lto = false
+debug-assertions = true
+codegen-units = 4
+
+[profile.bench]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1

@@ -1,0 +1,18 @@
+[clog]
+repository = "https://github.com/unspokenn/openapi3-parser"
+changelog = "CHANGELOG.md"
+from-latest-tag = true
+link-style = "github"
+
+[sections]
+Features = ["feat"]
+"Bug Fixes" = ["fix"]
+Performance = ["perf"]
+Improvements = ["impr", "im", "imp", "refactor", "chore", "style"]
+Documentation = ["docs"]
+Deprecations = ["depr"]
+Automation = ["ci", "build"]
+Examples = ["examples"]
+Test = ["test"]
+"API Additions" = ["add", "api"]
+Meta = ["meta"]
