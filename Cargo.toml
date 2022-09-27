@@ -22,9 +22,14 @@ include = ["src/", "LICENSE-*", "README.md", "COPYRIGHT"]
 maintenance = { status = "actively-developed" }
 
 [dependencies]
-serde = { version = "1.0", feature = ["derive"] }
-serde_json = { version = "1.0", feature = ["preserve_order"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["preserve_order"] }
+serde_yaml = "0.9.13"
+jsonschema = { version = "0.16.0", features = ["draft201909", "draft202012"] }
+reqwest = { version = "*", features = [ "rustls-tls" ] }
 
+[dev-dependencies]
+pretty_assertions = "1"
 
 [profile.dev]
 opt-level=0
