@@ -1,4 +1,12 @@
+#!/usr/bin/env just --justfile
+
+package_name := `sed -En 's/name[[:space:]]*=[[:space:]]*"([^"]+)"/\1/p' Cargo.toml | head -1`
+package_version := `sed -En 's/version[[:space:]]*=[[:space:]]*"([^"]+)"/\1/p' Cargo.toml | head -1`
+
 set dotenv-load := false
+
+update-sub:
+    git submodule update --remote --merge
 
 help:
     @just --list --unsorted
